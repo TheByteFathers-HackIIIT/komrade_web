@@ -9,8 +9,14 @@ const Settings = lazy(() => import('../pages/Settings'));
 const Tables = lazy(() => import('../pages/Tables'));
 const Alerts = lazy(() => import('../pages/UiElements/Alerts'));
 const Buttons = lazy(() => import('../pages/UiElements/Buttons'));
+const SignIn = lazy(() => import('../pages/Authentication/SignIn'));
 
 const coreRoutes = [
+  {
+    path: '/signin',
+    title: 'Sign In',
+    component: SignIn,
+  },
   {
     path: '/calendar',
     title: 'Calender',
