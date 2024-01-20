@@ -1,8 +1,17 @@
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import LogoDark from '../../images/logo/logo-dark.png';
 import Logo from '../../images/logo/logo.png';
 
-const SignIn = () => {
+const CAS: React.FC = () => {
+    const location = useLocation();
+    const [ticket, setTicket] = useState<string | null>(null);
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const ticketValue = params.get('ticket');
+        setTicket(ticketValue);
+    }, [location.search]);
   return (
     <>
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -20,7 +29,7 @@ const SignIn = () => {
           <div className="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2">
             <div className="w-full p-4 sm:p-12.5 xl:p-17.5 flex items-center justify-center flex-col">
               <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
-                Sign-in using College Email.
+                Ticket: {ticket}
               </h2>
                 <div className="mb-5 flex items-center justify-center">
                   {/* TODO: Change redirect URL */}
@@ -34,4 +43,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default CAS;

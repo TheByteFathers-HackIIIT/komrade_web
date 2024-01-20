@@ -29,6 +29,20 @@ function App() {
       <Routes>
         <Route element={<DefaultLayout />}>
           <Route index element={<SignIn />} />
+          {routes.map((routes, index) => {
+            const { path, component: Component } = routes;
+            return (
+              <Route
+                key={index}
+                path={path}
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <Component />
+                  </Suspense>
+                }
+              />
+            );
+          })}
         </Route>
       </Routes>
     </>

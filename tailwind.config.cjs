@@ -210,6 +210,7 @@ module.exports = {
       },
       content: {
         'icon-copy': 'url("../images/icon/icon-copy-alt.svg")',
+        'flowbit': 'url("./node_modules/flowbite/**/*.js")',
       },
       transitionProperty: { width: 'width', stroke: 'stroke' },
       borderWidth: {
@@ -250,5 +251,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin'),
+  ],
 }

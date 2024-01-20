@@ -10,12 +10,18 @@ const Tables = lazy(() => import('../pages/Tables'));
 const Alerts = lazy(() => import('../pages/UiElements/Alerts'));
 const Buttons = lazy(() => import('../pages/UiElements/Buttons'));
 const SignIn = lazy(() => import('../pages/Authentication/SignIn'));
+const CAS = lazy(() => import('../pages/Authentication/CAS'));
 
 const coreRoutes = [
   {
     path: '/signin',
     title: 'Sign In',
     component: SignIn,
+  },
+  {
+    path: '/cas',
+    title: 'CAS',
+    component: CAS,
   },
   {
     path: '/calendar',
