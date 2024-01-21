@@ -158,6 +158,27 @@ span.flatpickr-weekday,
   background-image: url(./images/icon/icon-arrow-down.svg);
 }
 
+.full-height {
+  @apply h-full;
+  /* center the div vertically and horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.responsive-size-logo-signin {
+  /* 
+  make the image element responsive to the size of screen, 
+  so that it takes up appropriate space in all sizes 
+  by taking minimum of width and height, to accomodate
+  all aspect ratios
+  */
+  width: 100%;
+  height: 50%;
+  object-fit: contain;
+  object-position: center;
+}
+
 [x-cloak] {
   display: none !important;
 }
