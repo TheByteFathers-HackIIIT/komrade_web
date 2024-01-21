@@ -7,7 +7,6 @@
 // import ChartTwo from '../../components/ChartTwo.tsx';
 // import ChatCard from '../../components/ChatCard.tsx';
 // import MapOne from '../../components/MapOne.tsx';
-import { Link } from 'react-router-dom';
 import TableOne from '../../components/TableOne.tsx';
 
 const Dashboard = () => {
@@ -42,7 +41,7 @@ const Dashboard = () => {
         <ChatCard />
       </div> */}
 
-      <TableOne />
+      <MyOrders />
 
       {/* add a floating + button on the bottom right */}
       {/* increase the size of the floating button depending on available resolution */}
