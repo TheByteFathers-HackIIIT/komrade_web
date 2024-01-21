@@ -340,7 +340,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       </clipPath>
                     </defs>
                   </svg>
-                  Tables
+                  Orders
                 </NavLink>
               </li>
               {/* <!-- Menu Item Tables --> */}
