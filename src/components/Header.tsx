@@ -12,7 +12,7 @@ const Header = (props: {
       <div className="flex flex-grow items-center justify-between py-4 px-4 shadow-2 md:px-6 2xl:px-11">
         <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
           {/* <!-- Hamburger Toggle BTN --> */}
-          {/* <button
+          <button
             aria-controls="sidebar"
             onClick={(e) => {
               e.stopPropagation();
@@ -51,7 +51,7 @@ const Header = (props: {
                 ></span>
               </span>
             </span>
-          </button> */}
+          </button>
           {/* <!-- Hamburger Toggle BTN --> */}
 
           <div className="block flex-shrink-0 lg:hidden">

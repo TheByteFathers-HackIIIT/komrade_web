@@ -9,13 +9,13 @@ const Settings = lazy(() => import('../pages/Settings'));
 const Tables = lazy(() => import('../pages/Tables'));
 const Alerts = lazy(() => import('../pages/UiElements/Alerts'));
 const Buttons = lazy(() => import('../pages/UiElements/Buttons'));
-const Ecommerce = lazy(() => import('../pages/Dashboard/ECommerce'));
+const Dashboard = lazy(() => import('../pages/Dashboard/Dashboard'));
 
 const coreRoutes = [
   {
     path: '/dashboard',
-    title: 'E-Commerce',
-    component: Ecommerce,
+    title: 'Dashboard',
+    component: Dashboard,
   },
   {
     path: '/calendar',

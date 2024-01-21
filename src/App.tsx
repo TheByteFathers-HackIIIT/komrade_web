@@ -2,7 +2,7 @@ import { Suspense, lazy, useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
-import ECommerce from './pages/Dashboard/ECommerce';
+import ECommerce from './pages/Dashboard/Dashboard';
 import SignIn from './pages/Authentication/SignIn';
 import Loader from './common/Loader';
 import routes from './routes';
