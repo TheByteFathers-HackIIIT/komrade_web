@@ -1,11 +1,10 @@
 import Breadcrumb from '../../components/Breadcrumb';
 
-// ['bakul','parijaat','obh','kadamb']
 const FormElements = () => {
   return (
     <>
       <Breadcrumb pageName="Register" />
-      <div className="grid grid-cols-1 gap-9 sm:grid-cols-2">
+      <div className="">
         <div className="flex flex-col gap-9">
           {/* <!-- Input Fields --> */}
           <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -16,7 +15,7 @@ const FormElements = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="Default Input"
+                  placeholder="Enter your room number here..."
                   className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                 />
               </div>
@@ -87,9 +86,10 @@ const FormElements = () => {
                 </label>
                 <input
                   type="number"
-                  placeholder="Default Input"
-                  className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  placeholder="Enter your phone number here..."
+                  className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary no-spinner"
                 />
+                {/* remove the increment decrement options from the above number input field */}
               </div>
             </div>
           </div>
