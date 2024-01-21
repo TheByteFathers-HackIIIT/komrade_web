@@ -9,6 +9,7 @@ import Loader from './common/Loader';
 import routes from './routes';
 
 const DefaultLayout = lazy(() => import('./layout/DefaultLayout'));
+const SignInLayout = lazy(() => import('./layout/SignInLayout'));
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -27,8 +28,25 @@ function App() {
         containerClassName="overflow-auto"
       />
       <Routes>
-        <Route element={<DefaultLayout />}>
+        <Route element={<SignInLayout />}>
           <Route index element={<SignIn />} />
+          {routes.map((routes, index) => {
+            const { path, component: Component } = routes;
+            return (
+              <Route
+                key={index}
+                path={path}
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <Component />
+                  </Suspense>
+                }
+              />
+            );
+          })}
+        </Route>
+        <Route element={<DefaultLayout />}>
+          <Route index element={<ECommerce />} />
           {routes.map((routes, index) => {
             const { path, component: Component } = routes;
             return (
