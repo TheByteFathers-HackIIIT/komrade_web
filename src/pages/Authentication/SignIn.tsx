@@ -9,10 +9,10 @@ const SignIn = () => {
         <div className="flex flex-wrap items-center">
           <div className="w-full xl:block xl:w-1/2">
             <div className="py-17.5 px-26 text-center">
-              <div className="mb-5.5 inline-block">
+              <Link className="mb-5.5 inline-block" to="/">
                 <img className="hidden dark:block responsive-size-logo-signin" src={Logo} alt="Logo" />
                 <img className="dark:hidden responsive-size-logo-signin" src={LogoDark} alt="Logo" />
-              </div>
+              </Link>
 
             </div>
           </div>
@@ -22,10 +22,10 @@ const SignIn = () => {
               <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
                 Sign-in using College Email.
               </h2>
-              <div className="mb-5 flex items-center justify-center">
-                {/* TODO: Change redirect URL */}
-                <a href="https://login.iiit.ac.in/cas/login?service=http%3A%2F%2Flocalhost%3A5173%2Fcas"><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign in</button></a>
-              </div>
+                <div className="mb-5 flex items-center justify-center">
+                  {/* TODO: Change redirect URL */}
+                  <a href="https://login.iiit.ac.in/cas/login?service=http%3A%2F%2Flocalhost%3A5173%2Fcas"><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign in</button></a>
+                </div>
             </div>
           </div>
         </div>
