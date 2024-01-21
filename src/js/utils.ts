@@ -3,8 +3,8 @@ export const genheaders = () => {
     const email = localStorage.getItem('email');
     const headers = {
         'Content-Type': 'application/json',
-        'seshkey': seshkey,
-        'email': email
+        'seshkey': seshkey?seshkey:'',
+        'email': email?email:'',
     }
     return headers;
 }
