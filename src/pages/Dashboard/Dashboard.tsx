@@ -7,6 +7,7 @@
 // import ChartTwo from '../../components/ChartTwo.tsx';
 // import ChatCard from '../../components/ChatCard.tsx';
 // import MapOne from '../../components/MapOne.tsx';
+import { Link } from 'react-router-dom';
 import MyOrders from '../../components/TableOne.tsx';
 
 const Dashboard = () => {
@@ -47,9 +48,11 @@ const Dashboard = () => {
       {/* increase the size of the floating button depending on available resolution */}
       {/* increase the font size also depending on  */}
       <div className="fixed bottom-0 right-0">
+        <Link to='/createorder'>
         <button style={{ margin: '25px' }} className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full floating-button">
           +
         </button>
+        </Link>
       </div>
     </>
   );

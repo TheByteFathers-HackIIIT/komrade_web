@@ -10,8 +10,14 @@ const Tables = lazy(() => import('../pages/Orders'));
 const Alerts = lazy(() => import('../pages/UiElements/Alerts'));
 const Buttons = lazy(() => import('../pages/UiElements/Buttons'));
 const Dashboard = lazy(() => import('../pages/Dashboard/Dashboard'));
+const CreateOrder = lazy(() => import('../pages/Dashboard/CreateOrder'));
 
 const coreRoutes = [
+  {
+    path: '/createorder',
+    title: 'Create Order',
+    component: CreateOrder,
+  },
   {
     path: '/dashboard',
     title: 'Dashboard',
