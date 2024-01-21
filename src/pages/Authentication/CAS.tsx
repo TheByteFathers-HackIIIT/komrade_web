@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState, useMemo } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LogoDark from '../../images/logo/logo-dark.png';
 import Logo from '../../images/logo/logo.png';
 import { apiUrl } from '../../App';
@@ -10,9 +10,8 @@ const CAS: React.FC = () => {
   console.log('CAS component rendered');
   const location = useLocation();
   const memoizedLocation = useMemo(() => location, [location]); // Memoize the location
-
   const [ticket, setTicket] = useState<string | null>(null);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const params = new URLSearchParams(memoizedLocation.search);
     const ticketValue = params.get('ticket');
@@ -29,17 +28,23 @@ const CAS: React.FC = () => {
           }
         );
         const data = await response.json();
-        localStorage.setItem('email', data['email']);
-        localStorage.setItem('firstname', data['firstname']);
-        localStorage.setItem('name', data['name']);
-        localStorage.setItem('registered', data['registered']);
-        localStorage.setItem('seshkey', data['seshkey']);
-        console.log(data);
-        if(data.status === 'success') {
-            
+        if(response.status ===  200) {
+            localStorage.setItem('email', data['email']);
+            localStorage.setItem('firstname', data['firstname']);
+            localStorage.setItem('name', data['name']);
+            localStorage.setItem('registered', data['registered']);
+            localStorage.setItem('seshkey', data['seshkey']);
+            console.log(data);
+            if(!data['registered']) {
+              navigate('/register');
+            }
+            else{
+                navigate('/dashboard');
+            }
         }
       } catch (error) {
-        // Handle error
+        localStorage.clear();
+        console.log(error);
       }
     };
 
