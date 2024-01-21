@@ -1,8 +1,15 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import LogoDark from '../../images/logo/logo-dark.png';
 import Logo from '../../images/logo/logo.png';
 
 const SignIn = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if(localStorage.getItem('seshkey') !== null && localStorage.getItem('registered') === 'true') {
+      navigate('/dashboard');
+    }
+  }, []);
   return (
     <>
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark full-height">
