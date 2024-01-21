@@ -31,7 +31,7 @@ const SignIn = () => {
               </h2>
                 <div className="mb-5 flex items-center justify-center">
                   {/* TODO: Change redirect URL */}
-                  <Link to="https://login.iiit.ac.in/cas/login?service=http%3A%2F%2Flocalhost%3A5173%2Fcas">
+                  <Link to="https://login.iiit.ac.in/cas/login?service=http%3A%2F%2F10.2.130.252%3A5173%2Fcas">
                     <button className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     Sign in
                     </button>

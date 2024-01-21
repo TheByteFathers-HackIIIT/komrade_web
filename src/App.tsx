@@ -8,6 +8,7 @@ import Loader from './common/Loader';
 import routes from './routes';
 import routes_with_bar from './routes_with_bar';
 
+export const userName = localStorage.getItem('name');
 export const apiUrl = 'http://10.2.128.213:3001';
 
 const DefaultLayout = lazy(() => import('./layout/DefaultLayout'));
