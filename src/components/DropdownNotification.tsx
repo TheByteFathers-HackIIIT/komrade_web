@@ -1,11 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
+import { useNavigate } from 'react-router-dom';
+const navigate = useNavigate();
 
 const DropdownNotification = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const trigger = useRef<any>(null);
   const dropdown = useRef<any>(null);
+
+  const isMobile = useMediaQuery({ query: '(max-width: 600px)' });
 
   useEffect(() => {
     const clickHandler = ({ target }: MouseEvent) => {
@@ -32,11 +37,19 @@ const DropdownNotification = () => {
     return () => document.removeEventListener('keydown', keyHandler);
   });
 
+    const handleClick = () => {
+    if (isMobile) {
+      navigate('/notifications');
+    } else {
+      setDropdownOpen(!dropdownOpen);
+    }
+  };
+
   return (
     <li className="relative">
       <Link
         ref={trigger}
-        onClick={() => setDropdownOpen(!dropdownOpen)}
+        onClick={handleClick}
         to="#"
         className="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white"
       >
