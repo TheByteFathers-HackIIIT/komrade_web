@@ -159,11 +159,12 @@ span.flatpickr-weekday,
 }
 
 .full-height {
-  @apply h-full;
-  /* center the div vertically and horizontally */
+  /* @apply h-full; */
+  /* center the div vertically and horizontally on the entire screen */
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 90vh;
 }
 
 .responsive-size-logo-signin {
@@ -173,10 +174,7 @@ span.flatpickr-weekday,
   by taking minimum of width and height, to accomodate
   all aspect ratios
   */
-  width: 100%;
-  height: 50%;
-  object-fit: contain;
-  object-position: center;
+  width: min(50vw, 50vh);
 }
 
 [x-cloak] {
