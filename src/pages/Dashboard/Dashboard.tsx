@@ -8,8 +8,11 @@
 // import ChatCard from '../../components/ChatCard.tsx';
 // import MapOne from '../../components/MapOne.tsx';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import MyOrders from '../../components/TableOne.tsx';
 =======
+=======
+>>>>>>> parent of 98d601a (Merge branch 'main' of github.com:TheByteFathers-HackIIIT/komrade_web)
 import { Link } from 'react-router-dom';
 import TableOne from '../../components/TableOne.tsx';
 >>>>>>> parent of 98d601a (Merge branch 'main' of github.com:TheByteFathers-HackIIIT/komrade_web)
