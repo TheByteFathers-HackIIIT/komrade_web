@@ -1,17 +1,53 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import LogoDark from '../../images/logo/logo-dark.png';
 import Logo from '../../images/logo/logo.png';
 
 const CAS: React.FC = () => {
-    const location = useLocation();
-    const [ticket, setTicket] = useState<string | null>(null);
-    useEffect(() => {
-        const params = new URLSearchParams(location.search);
-        const ticketValue = params.get('ticket');
-        setTicket(ticketValue);
-    }, [location.search]);
+  console.log('CAS component rendered');
+  const location = useLocation();
+  const memoizedLocation = useMemo(() => location, [location]); // Memoize the location
+
+  const [ticket, setTicket] = useState<string | null>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(memoizedLocation.search);
+    const ticketValue = params.get('ticket');
+    setTicket(ticketValue);
+
+    const authenticateUser = async (ticket: string) => {
+      try {
+        const response = await fetch(
+          `http://10.2.128.213:3001/auth?ticket=${ticket}`,
+          {
+            method: 'GET',
+            credentials: 'include',
+          }
+        );
+
+        const data = await response.json();
+        localStorage.setItem('email', data['email']);
+        localStorage.setItem('firstname', data['firstname']);
+        localStorage.setItem('name', data['name']);
+        localStorage.setItem('registered', data['registered']);
+        console.log(data);
+        if(data.status === 'success') {
+            
+            
+        }
+        // if (data.status === 'success') {
+        //   window.location.href = '/';
+        // }
+      } catch (error) {
+        // Handle error
+      }
+    };
+
+    if (ticketValue) {
+      authenticateUser(ticketValue);
+    }
+  }, [memoizedLocation]);
   return (
     <>
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -43,4 +79,4 @@ const CAS: React.FC = () => {
   );
 };
 
-export default CAS;
+export default React.memo(CAS);
