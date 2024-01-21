@@ -54,18 +54,18 @@ const Header = (props: {
           </button>
           {/* <!-- Hamburger Toggle BTN --> */}
 
-          {/* <div className="block flex-shrink-0 lg:hidden">
+          <div className="block flex-shrink-0 lg:hidden">
             <img src={Logo} alt="Logo" />
-          </div> */}
+          </div>
         </div>
 
         <div className="hidden sm:block">
           {/* make the elements written below this line be at the same horizontal level */}
           <div className="flex items-center gap-2 sm:gap-4">
 
-            {/* <Link className="block flex-shrink-0" to="/">
+            <Link className="block flex-shrink-0" to="/">
               <img src={Logo} alt="Logo" />
-            </Link> */}
+            </Link>
             
             <h1 className="hidden text-xl font-semibold text-gray-800 dark:text-white lg:block">
               Komrade

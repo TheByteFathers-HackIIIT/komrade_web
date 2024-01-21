@@ -7,15 +7,7 @@
 // import ChartTwo from '../../components/ChartTwo.tsx';
 // import ChatCard from '../../components/ChatCard.tsx';
 // import MapOne from '../../components/MapOne.tsx';
-<<<<<<< HEAD
-<<<<<<< HEAD
 import MyOrders from '../../components/TableOne.tsx';
-=======
-=======
->>>>>>> parent of 98d601a (Merge branch 'main' of github.com:TheByteFathers-HackIIIT/komrade_web)
-import { Link } from 'react-router-dom';
-import TableOne from '../../components/TableOne.tsx';
->>>>>>> parent of 98d601a (Merge branch 'main' of github.com:TheByteFathers-HackIIIT/komrade_web)
 
 const Dashboard = () => {
   return (
@@ -49,7 +41,7 @@ const Dashboard = () => {
         <ChatCard />
       </div> */}
 
-      <TableOne />
+      <MyOrders />
 
       {/* add a floating + button on the bottom right */}
       {/* increase the size of the floating button depending on available resolution */}
