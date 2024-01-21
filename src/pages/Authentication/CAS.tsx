@@ -3,6 +3,8 @@ import { useEffect, useState, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import LogoDark from '../../images/logo/logo-dark.png';
 import Logo from '../../images/logo/logo.png';
+import { apiUrl } from '../../App';
+import { genheaders } from '../../js/utils';
 
 const CAS: React.FC = () => {
   console.log('CAS component rendered');
@@ -18,29 +20,31 @@ const CAS: React.FC = () => {
 
     const authenticateUser = async (ticket: string) => {
       try {
+        if(localStorage.getItem('email')) {
+            
+        }
         const response = await fetch(
-          `http://10.2.128.213:3001/auth?ticket=${ticket}`,
+          apiUrl+`/auth?ticket=${ticket}`,
           {
             method: 'GET',
-            credentials: 'include',
+            headers: genheaders(),
+            mode: `cors`,
           }
         );
-
         const data = await response.json();
+        console.log(data);
         localStorage.setItem('email', data['email']);
         localStorage.setItem('firstname', data['firstname']);
         localStorage.setItem('name', data['name']);
         localStorage.setItem('registered', data['registered']);
-        console.log(data);
+        localStorage.setItem('seshkey', data['seshkey']);
         if(data.status === 'success') {
-            
-            
+            if(data['registered'] === false) {
+                window.location.href = '/register';
+            }
         }
-        // if (data.status === 'success') {
-        //   window.location.href = '/';
-        // }
-      } catch (error) {
-        // Handle error
+     } 
+      catch (error) {
       }
     };
 
