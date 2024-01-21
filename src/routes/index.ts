@@ -2,6 +2,7 @@ import { lazy } from 'react';
 
 const SignIn = lazy(() => import('../pages/Authentication/SignIn'));
 const CAS = lazy(() => import('../pages/Authentication/CAS'));
+const Register = lazy(() => import('../pages/Authentication/Register'));
 
 const coreRoutes = [
   {
@@ -13,6 +14,11 @@ const coreRoutes = [
     path: '/cas',
     title: 'CAS',
     component: CAS,
+  },
+  {
+    path: '/register',
+    title: 'Register',
+    component: Register,
   },
 ];
 
